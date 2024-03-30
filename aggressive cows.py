@@ -1,12 +1,13 @@
 def isvalid(stalls,n,k,mid):
     cows=1
-    dis=0
+    dis=stalls[0]
     for i in range(n):
         if (stalls[i]-dis)>=mid:
             cows+=1
+            dis=stalls[i]
             if cows==k:
                 return True
-            dis=stalls[i]
+            
 
     return False
 
@@ -27,6 +28,10 @@ def aggressivecows(stalls,k):
 stalls=[6,4,0,3,4,7,10,9]
 k=4
 print(aggressivecows(stalls,k))
+
+
+
+
 
 
 
