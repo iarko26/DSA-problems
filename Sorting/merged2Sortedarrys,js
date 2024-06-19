@@ -1,0 +1,39 @@
+var merge = function(nums1, m, nums2, n) {
+    let i=0;
+    let j=0;
+    let k=0;
+    let nums3=new Array(m+n)
+    while(i<m && j<n){
+        if(nums1[i]<nums2[j]){
+           nums3[k]=nums1[i]
+         
+            i++;
+        }
+        else{
+              nums3[k]=nums2[j]
+          
+            j++;
+        }
+        k++
+
+    }
+
+    while(i<m){
+        nums3[k]=nums1[i]
+        k++;
+        i++;
+
+    }
+
+     while(j<n){
+          nums3[k]=nums2[j]
+        k++;
+        j++;
+        
+    }
+
+    for (let l = 0; l < m + n; l++) {
+        nums1[l] = nums3[l];
+    }
+    
+};
